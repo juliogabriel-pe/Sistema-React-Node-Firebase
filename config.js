@@ -1,14 +1,13 @@
 const firebase = require("firebase");
 const firebaseConfig = {
-  apiKey: "AIzaSyACYJ5Cm2Y-i7HJes2ET2QW67zvIgLrZeo",
-  authDomain: "tutorial-e06c1.firebaseapp.com",
-  projectId: "tutorial-e06c1",
-  storageBucket: "tutorial-e06c1.appspot.com",
-  messagingSenderId: "863505404334",
-  appId: "1:863505404334:web:132118b0d6acd7dfa3f83f",
-  measurementId: "G-SW2M0FYQG5",
+  apiKey: "AIzaSyBMY6ig8TiUNLl3QHZ09AApAwOyMP7UFLg",
+  authDomain: "testeathos-27577.firebaseapp.com",
+  projectId: "testeathos-27577",
+  storageBucket: "testeathos-27577.appspot.com",
+  messagingSenderId: "415183701543",
+  appId: "1:415183701543:web:5635684357c5878c58f002"
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const User = db.collection("Users");
+const User = db.collection("Cliente");
 module.exports = User;

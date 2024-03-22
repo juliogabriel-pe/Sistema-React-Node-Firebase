@@ -11,10 +11,22 @@ app.get("/", async (req, res) => {
   res.send(list);
 });
 
+app.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const snapshot = await User.doc(id).get();
+
+  if (!snapshot.exists) {
+    return res.send("Usuário não encontrado.");
+  }
+
+  const user = { id: snapshot.id, ...snapshot.data() };
+  res.send(user);
+});
+
 app.post("/create", async (req, res) => {
   const data = req.body;
   await User.add({ data });
-  res.send({ msg: "User Added" });
+  res.send({ msg: "User Created" });
 });
 
 app.post("/update", async (req, res) => {
@@ -22,12 +34,18 @@ app.post("/update", async (req, res) => {
   delete req.body.id;
   const data = req.body;
   await User.doc(id).update(data);
-  res.send({ msg: "Updated" });
+  res.send({ msg: "User Updated" });
 });
 
 app.post("/delete", async (req, res) => {
   const id = req.body.id;
   await User.doc(id).delete();
-  res.send({ msg: "Deleted" });
+  res.send({ msg: "User Deleted" });
 });
-app.listen(4000, () => console.log("Up & RUnning *4000"));
+
+
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+    console.log(`Servidor em execução na porta http://localhost:${port}/`);
+});
