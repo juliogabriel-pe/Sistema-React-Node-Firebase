@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: aqua;
+}
+
+.lista {
+    text-align: center;
+}
+
+.paiList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+.itens {
+    margin: 10px;
+    text-align: justify; /* Centraliza o texto dentro de cada h3 */
+}
