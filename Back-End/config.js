@@ -1,11 +1,11 @@
 const firebase = require("firebase");
 const firebaseConfig = {
-  apiKey: "AIzaSyBMY6ig8TiUNLl3QHZ09AApAwOyMP7UFLg",
-  authDomain: "testeathos-27577.firebaseapp.com",
-  projectId: "testeathos-27577",
-  storageBucket: "testeathos-27577.appspot.com",
-  messagingSenderId: "415183701543",
-  appId: "1:415183701543:web:5635684357c5878c58f002"
+  apiKey: // Sua(Your) API key do Firebase,
+  authDomain: // Seu(Your) authDomain,
+  projectId: // Seu(Your) projectId,
+  storageBucket: // Seu(Your) storageBucket,
+  messagingSenderId: // Seu(Your) messagingSenderId,
+  appId: // Seu(your) appId
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
